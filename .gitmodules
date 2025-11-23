@@ -1,0 +1,9 @@
+[submodule "bpa"]
+	path = bpa
+	url = https://github.com/mikhalexandr/itmo-cse-bpa.git
+[submodule "informatics"]
+	path = informatics
+	url = https://github.com/mikhalexandr/itmo-cse-informatics.git
+[submodule "programming"]
+	path = programming
+	url = https://github.com/mikhalexandr/itmo-cse-programming.git
