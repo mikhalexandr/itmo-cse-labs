@@ -7,3 +7,6 @@
 [submodule "programming"]
 	path = programming
 	url = https://github.com/mikhalexandr/itmo-cse-programming.git
+[submodule "databases"]
+	path = databases
+	url = https://github.com/mikhalexandr/itmo-cse-databases.git
