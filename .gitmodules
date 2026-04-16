@@ -10,6 +10,3 @@
 [submodule "databases"]
 	path = databases
 	url = https://github.com/mikhalexandr/itmo-cse-databases.git
-[submodule "report-template"]
-	path = report-template
-	url = https://github.com/mikhalexandr/itmo-cse-report-template.git
