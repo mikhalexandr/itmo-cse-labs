@@ -10,3 +10,6 @@
 [submodule "databases"]
 	path = databases
 	url = https://github.com/mikhalexandr/itmo-cse-databases.git
+[submodule "itmo-cse-linear-algebra"]
+	path = itmo-cse-linear-algebra
+	url = https://github.com/mikhalexandr/itmo-cse-linear-algebra.git
