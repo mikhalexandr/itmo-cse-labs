@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="456" viewBox="0 0 1120 456" role="img" aria-labelledby="title desc">
+  <title id="title">Активность коммитов по месяцам</title>
+  <desc id="desc">Количество коммитов во всех сабмодулях за последние двенадцать месяцев относительно последнего обновления архива.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif; }
+    .title { font-size: 24px; font-weight: 800; fill: #1F2328; }
+    .subtitle { font-size: 14px; font-weight: 500; fill: #59636E; }
+    .badge-text { font-size: 12.5px; font-weight: 600; fill: #59636E; }
+    .kpi-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; fill: #59636E; }
+    .kpi-value { font-size: 30px; font-weight: 800; fill: #1F2328; }
+    .kpi-note { font-size: 12.5px; font-weight: 500; fill: #818B98; }
+    .section-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; fill: #59636E; }
+    .row-title { font-size: 16px; font-weight: 700; fill: #1F2328; }
+    .row-meta { font-size: 12.5px; font-weight: 500; fill: #59636E; }
+    .row-number { font-size: 16px; font-weight: 700; fill: #1F2328; }
+    .row-unit { font-size: 11px; font-weight: 500; fill: #818B98; }
+    .row-date-label { font-size: 10px; font-weight: 600; letter-spacing: 1px; fill: #818B98; }
+    .row-date { font-size: 13px; font-weight: 600; fill: #1F2328; }
+    .axis-label { font-size: 11px; font-weight: 500; fill: #818B98; }
+    .count { font-size: 12px; font-weight: 600; fill: #59636E; }
+    .count-zero { font-size: 12px; font-weight: 600; fill: #818B98; }
+    .month { font-size: 11.5px; font-weight: 500; fill: #59636E; }
+    .legend { font-size: 12.5px; font-weight: 600; fill: #59636E; }
+  </style>
+  <defs>
+    <clipPath id="bar-light-1"><rect x="187.0" y="339" width="64" height="27" rx="5"/></clipPath>
+    <clipPath id="bar-light-2"><rect x="269.0" y="284" width="64" height="82" rx="5"/></clipPath>
+    <clipPath id="bar-light-3"><rect x="351.0" y="150" width="64" height="216" rx="5"/></clipPath>
+    <clipPath id="bar-light-4"><rect x="433.0" y="258" width="64" height="108" rx="5"/></clipPath>
+    <clipPath id="bar-light-5"><rect x="515.0" y="336" width="64" height="30" rx="5"/></clipPath>
+    <clipPath id="bar-light-6"><rect x="597.0" y="310" width="64" height="56" rx="5"/></clipPath>
+    <clipPath id="bar-light-7"><rect x="679.0" y="313" width="64" height="53" rx="5"/></clipPath>
+    <clipPath id="bar-light-8"><rect x="761.0" y="250" width="64" height="116" rx="5"/></clipPath>
+    <clipPath id="bar-light-9"><rect x="843.0" y="226" width="64" height="140" rx="5"/></clipPath>
+    <clipPath id="bar-light-10"><rect x="925.0" y="308" width="64" height="58" rx="5"/></clipPath>
+    <clipPath id="bar-light-11"><rect x="1007.0" y="352" width="64" height="14" rx="5"/></clipPath>
+  </defs>
+  <rect x="1" y="1" width="1118" height="454" rx="16" fill="#FFFFFF" stroke="#D0D7DE" stroke-width="1.5"/>
+  <text x="40" y="54" class="title">Активность коммитов</text>
+  <text x="40" y="80" class="subtitle">Последние 12 месяцев · git-история всех сабмодулей</text>
+  <rect x="887" y="34" width="193" height="26" rx="13" fill="#F6F8FA" stroke="#E7ECF0" stroke-width="1"/>
+  <text x="984" y="51" class="badge-text" text-anchor="middle">318 коммитов за 12 мес</text>
+  <line x1="1.5" y1="104" x2="1118.5" y2="104" stroke="#E7ECF0" stroke-width="1"/>
+  <line x1="96" y1="360.0" x2="1080" y2="360.0" stroke="#E7ECF0" stroke-width="1"/>
+  <text x="84" y="364.0" class="axis-label" text-anchor="end">0</text>
+  <line x1="96" y1="307.5" x2="1080" y2="307.5" stroke="#EFF2F6" stroke-width="1"/>
+  <text x="84" y="311.5" class="axis-label" text-anchor="end">20</text>
+  <line x1="96" y1="255.0" x2="1080" y2="255.0" stroke="#EFF2F6" stroke-width="1"/>
+  <text x="84" y="259.0" class="axis-label" text-anchor="end">40</text>
+  <line x1="96" y1="202.5" x2="1080" y2="202.5" stroke="#EFF2F6" stroke-width="1"/>
+  <text x="84" y="206.5" class="axis-label" text-anchor="end">60</text>
+  <line x1="96" y1="150.0" x2="1080" y2="150.0" stroke="#EFF2F6" stroke-width="1"/>
+  <text x="84" y="154.0" class="axis-label" text-anchor="end">80</text>
+  <text x="137.0" y="386" class="month" text-anchor="middle">авг 25</text>
+  <rect x="105.0" y="358" width="64" height="2" fill="#D8DEE4"/>
+  <text x="137.0" y="350" class="count-zero" text-anchor="middle">0</text>
+  <text x="219.0" y="386" class="month" text-anchor="middle">сен 25</text>
+  <g clip-path="url(#bar-light-1)"><rect x="187.0" y="339" width="64" height="21" fill="#BC4C00"/></g>
+  <text x="219.0" y="330" class="count" text-anchor="middle">8</text>
+  <text x="301.0" y="386" class="month" text-anchor="middle">окт 25</text>
+  <g clip-path="url(#bar-light-2)"><rect x="269.0" y="347" width="64" height="13" fill="#BF3989"/><rect x="269.0" y="305" width="64" height="42" fill="#0969DA"/><rect x="269.0" y="284" width="64" height="21" fill="#BC4C00"/></g>
+  <text x="301.0" y="275" class="count" text-anchor="middle">29</text>
+  <text x="383.0" y="386" class="month" text-anchor="middle">ноя 25</text>
+  <g clip-path="url(#bar-light-3)"><rect x="351.0" y="279" width="64" height="81" fill="#BF3989"/><rect x="351.0" y="187" width="64" height="92" fill="#0969DA"/><rect x="351.0" y="150" width="64" height="37" fill="#BC4C00"/></g>
+  <text x="383.0" y="141" class="count" text-anchor="middle">80</text>
+  <text x="465.0" y="386" class="month" text-anchor="middle">дек 25</text>
+  <g clip-path="url(#bar-light-4)"><rect x="433.0" y="350" width="64" height="10" fill="#BF3989"/><rect x="433.0" y="300" width="64" height="50" fill="#0969DA"/><rect x="433.0" y="258" width="64" height="42" fill="#BC4C00"/></g>
+  <text x="465.0" y="249" class="count" text-anchor="middle">39</text>
+  <text x="547.0" y="386" class="month" text-anchor="middle">янв 26</text>
+  <g clip-path="url(#bar-light-5)"><rect x="515.0" y="336" width="64" height="24" fill="#BC4C00"/></g>
+  <text x="547.0" y="327" class="count" text-anchor="middle">9</text>
+  <text x="629.0" y="386" class="month" text-anchor="middle">фев 26</text>
+  <g clip-path="url(#bar-light-6)"><rect x="597.0" y="321" width="64" height="39" fill="#BC4C00"/><rect x="597.0" y="310" width="64" height="11" fill="#1A7F37"/></g>
+  <text x="629.0" y="301" class="count" text-anchor="middle">19</text>
+  <text x="711.0" y="386" class="month" text-anchor="middle">мар 26</text>
+  <g clip-path="url(#bar-light-7)"><rect x="679.0" y="350" width="64" height="10" fill="#BF3989"/><rect x="679.0" y="344" width="64" height="6" fill="#BC4C00"/><rect x="679.0" y="313" width="64" height="31" fill="#1A7F37"/></g>
+  <text x="711.0" y="304" class="count" text-anchor="middle">18</text>
+  <text x="793.0" y="386" class="month" text-anchor="middle">апр 26</text>
+  <g clip-path="url(#bar-light-8)"><rect x="761.0" y="352" width="64" height="8" fill="#BF3989"/><rect x="761.0" y="326" width="64" height="26" fill="#BC4C00"/><rect x="761.0" y="287" width="64" height="39" fill="#1A7F37"/><rect x="761.0" y="250" width="64" height="37" fill="#8250DF"/></g>
+  <text x="793.0" y="241" class="count" text-anchor="middle">42</text>
+  <text x="875.0" y="386" class="month" text-anchor="middle">май 26</text>
+  <g clip-path="url(#bar-light-9)"><rect x="843.0" y="294" width="64" height="66" fill="#BF3989"/><rect x="843.0" y="247" width="64" height="47" fill="#BC4C00"/><rect x="843.0" y="244" width="64" height="3" fill="#1A7F37"/><rect x="843.0" y="226" width="64" height="18" fill="#8250DF"/></g>
+  <text x="875.0" y="217" class="count" text-anchor="middle">51</text>
+  <text x="957.0" y="386" class="month" text-anchor="middle">июн 26</text>
+  <g clip-path="url(#bar-light-10)"><rect x="925.0" y="321" width="64" height="39" fill="#BF3989"/><rect x="925.0" y="308" width="64" height="13" fill="#BC4C00"/></g>
+  <text x="957.0" y="299" class="count" text-anchor="middle">20</text>
+  <text x="1039.0" y="386" class="month" text-anchor="middle">июл 26</text>
+  <g clip-path="url(#bar-light-11)"><rect x="1007.0" y="352" width="64" height="8" fill="#BF3989"/></g>
+  <text x="1039.0" y="343" class="count" text-anchor="middle">3</text>
+  <circle cx="209.1" cy="422" r="5" fill="#BF3989"/>
+  <text x="222.1" y="426" class="legend">ОПД</text>
+  <circle cx="293.6" cy="422" r="5" fill="#0969DA"/>
+  <text x="306.6" y="426" class="legend">Информатика</text>
+  <circle cx="440.6" cy="422" r="5" fill="#BC4C00"/>
+  <text x="453.6" y="426" class="legend">Программирование</text>
+  <circle cx="627.5" cy="422" r="5" fill="#1A7F37"/>
+  <text x="640.5" y="426" class="legend">Базы данных</text>
+  <circle cx="772.9" cy="422" r="5" fill="#8250DF"/>
+  <text x="785.9" y="426" class="legend">Линейная алгебра</text>
+</svg>

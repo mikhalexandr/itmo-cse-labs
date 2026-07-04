@@ -1,15 +1,20 @@
 [submodule "bpa"]
 	path = 1_course/bpa
 	url = https://github.com/mikhalexandr-itmo-cse/bpa.git
+	branch = main
 [submodule "informatics"]
 	path = 1_course/informatics
 	url = https://github.com/mikhalexandr-itmo-cse/informatics.git
+	branch = main
 [submodule "programming"]
 	path = 1_course/programming
 	url = https://github.com/mikhalexandr-itmo-cse/programming.git
+	branch = main
 [submodule "databases"]
 	path = 1_course/databases
 	url = https://github.com/mikhalexandr-itmo-cse/databases.git
+	branch = main
 [submodule "linear-algebra"]
 	path = 1_course/linear-algebra
 	url = https://github.com/mikhalexandr-itmo-cse/linear-algebra.git
+	branch = main

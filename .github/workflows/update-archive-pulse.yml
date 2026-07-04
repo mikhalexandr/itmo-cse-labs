@@ -1,0 +1,94 @@
+name: Update archive pulse
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-archive-pulse
+  cancel-in-progress: false
+
+env:
+  PROFILE_REPOSITORY: mikhalexandr-itmo-cse/.github
+  PROFILE_TOKEN: ${{ secrets.ORG_PROFILE_TOKEN }}
+  PROFILE_ASSET_DIR: profile/assets/itmo-cse-labs
+
+jobs:
+  update:
+    name: Update generated archive pulse
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout archive
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          submodules: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Update submodule pointers
+        run: |
+          git submodule sync
+          git submodule update --init
+          git submodule update --remote
+
+      - name: Generate archive pulse
+        run: python3 scripts/update-readme-stats.py
+
+      - name: Commit archive pulse
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          if [ -n "$(git status --porcelain)" ]; then
+            git add .gitmodules README.md assets/readme 1_course
+            git commit -m "chore: update archive pulse"
+            git push
+          else
+            echo "Archive pulse is already up to date."
+          fi
+
+      - name: Checkout organization profile
+        if: env.PROFILE_TOKEN != ''
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ env.PROFILE_REPOSITORY }}
+          token: ${{ env.PROFILE_TOKEN }}
+          path: organization-profile
+
+      - name: Sync pulse to organization profile
+        if: env.PROFILE_TOKEN != ''
+        run: |
+          mkdir -p "organization-profile/${PROFILE_ASSET_DIR}"
+          cp assets/readme/archive-overview.svg assets/readme/archive-overview-dark.svg "organization-profile/${PROFILE_ASSET_DIR}/"
+          cp assets/readme/archive-activity.svg assets/readme/archive-activity-dark.svg "organization-profile/${PROFILE_ASSET_DIR}/"
+
+          python3 scripts/update-readme-stats.py \
+            --profile-readme organization-profile/profile/README.md \
+            --profile-assets-prefix assets/itmo-cse-labs
+
+          cd organization-profile
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add profile/README.md "${PROFILE_ASSET_DIR}"
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: update ITMO CSE archive pulse"
+            git push
+          else
+            echo "Organization profile pulse is already up to date."
+          fi
+
+      - name: Skip organization profile sync
+        if: env.PROFILE_TOKEN == ''
+        run: |
+          echo "::notice title=Organization profile skipped::Add ORG_PROFILE_TOKEN with contents:write access to ${PROFILE_REPOSITORY} to sync profile/README.md."

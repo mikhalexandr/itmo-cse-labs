@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="486" viewBox="0 0 1120 486" role="img" aria-labelledby="title desc">
+  <title id="title">Пульс архива учебных материалов</title>
+  <desc id="desc">Сводка по сабмодулям: предметы, отчеты, коммиты, строки и даты последних обновлений.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif; }
+    .title { font-size: 24px; font-weight: 800; fill: #E6EDF3; }
+    .subtitle { font-size: 14px; font-weight: 500; fill: #9198A1; }
+    .badge-text { font-size: 12.5px; font-weight: 600; fill: #9198A1; }
+    .kpi-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; fill: #9198A1; }
+    .kpi-value { font-size: 30px; font-weight: 800; fill: #E6EDF3; }
+    .kpi-note { font-size: 12.5px; font-weight: 500; fill: #6E7681; }
+    .section-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; fill: #9198A1; }
+    .row-title { font-size: 16px; font-weight: 700; fill: #E6EDF3; }
+    .row-meta { font-size: 12.5px; font-weight: 500; fill: #9198A1; }
+    .row-number { font-size: 16px; font-weight: 700; fill: #E6EDF3; }
+    .row-unit { font-size: 11px; font-weight: 500; fill: #6E7681; }
+    .row-date-label { font-size: 10px; font-weight: 600; letter-spacing: 1px; fill: #6E7681; }
+    .row-date { font-size: 13px; font-weight: 600; fill: #E6EDF3; }
+    .axis-label { font-size: 11px; font-weight: 500; fill: #6E7681; }
+    .count { font-size: 12px; font-weight: 600; fill: #9198A1; }
+    .count-zero { font-size: 12px; font-weight: 600; fill: #6E7681; }
+    .month { font-size: 11.5px; font-weight: 500; fill: #9198A1; }
+    .legend { font-size: 12.5px; font-weight: 600; fill: #9198A1; }
+  </style>
+  <rect x="1" y="1" width="1118" height="484" rx="16" fill="#0D1117" stroke="#30363D" stroke-width="1.5"/>
+  <text x="40" y="40" class="kpi-label">ПРЕДМЕТОВ</text>
+  <text x="40" y="78" class="kpi-value">5</text>
+  <text x="40" y="101" class="kpi-note">сабмодули верхнего уровня</text>
+  <line x1="274" y1="28" x2="274" y2="96" stroke="#21262D" stroke-width="1"/>
+  <text x="300" y="40" class="kpi-label">ОТЧЕТОВ</text>
+  <text x="300" y="78" class="kpi-value">22</text>
+  <text x="300" y="101" class="kpi-note">PDF-документы в архиве</text>
+  <line x1="534" y1="28" x2="534" y2="96" stroke="#21262D" stroke-width="1"/>
+  <text x="560" y="40" class="kpi-label">КОММИТОВ</text>
+  <text x="560" y="78" class="kpi-value">318</text>
+  <text x="560" y="101" class="kpi-note">суммарная git-история</text>
+  <line x1="794" y1="28" x2="794" y2="96" stroke="#21262D" stroke-width="1"/>
+  <text x="820" y="40" class="kpi-label">СТРОК ТЕКСТА</text>
+  <text x="820" y="78" class="kpi-value">13 947</text>
+  <text x="820" y="101" class="kpi-note">в текстовых файлах</text>
+  <line x1="1.5" y1="114" x2="1118.5" y2="114" stroke="#21262D" stroke-width="1"/>
+  <text x="40" y="152" class="section-label">ПРЕДМЕТЫ</text>
+  <rect x="905" y="135" width="175" height="26" rx="13" fill="#161B22" stroke="#21262D" stroke-width="1"/>
+  <text x="992" y="152" class="badge-text" text-anchor="middle">данные на 04.07.2026</text>
+  <circle cx="46" cy="199" r="5" fill="#DB61A2"/>
+  <text x="64" y="194" class="row-title">ОПД</text>
+  <text x="64" y="214" class="row-meta">отчетов: 8 · файлов: 41 · коммитов: 90</text>
+  <rect x="400" y="195" width="330" height="8" rx="4" fill="#21262D"/>
+  <rect x="400" y="195" width="99" height="8" rx="4" fill="#DB61A2"/>
+  <text x="858" y="196" class="row-number" text-anchor="end">1 669</text>
+  <text x="858" y="214" class="row-unit" text-anchor="end">строк</text>
+  <text x="1080" y="193" class="row-date-label" text-anchor="end">ОБНОВЛЕНО</text>
+  <text x="1080" y="214" class="row-date" text-anchor="end">04.07.2026</text>
+  <line x1="40" y1="228" x2="1080" y2="228" stroke="#21262D" stroke-width="1"/>
+  <circle cx="46" cy="257" r="5" fill="#F0883E"/>
+  <text x="64" y="252" class="row-title">Программирование</text>
+  <text x="64" y="272" class="row-meta">отчетов: 3 · файлов: 61 · коммитов: 105</text>
+  <rect x="400" y="253" width="330" height="8" rx="4" fill="#21262D"/>
+  <rect x="400" y="253" width="112" height="8" rx="4" fill="#F0883E"/>
+  <text x="858" y="254" class="row-number" text-anchor="end">1 890</text>
+  <text x="858" y="272" class="row-unit" text-anchor="end">строк</text>
+  <text x="1080" y="251" class="row-date-label" text-anchor="end">ОБНОВЛЕНО</text>
+  <text x="1080" y="272" class="row-date" text-anchor="end">06.06.2026</text>
+  <line x1="40" y1="286" x2="1080" y2="286" stroke="#21262D" stroke-width="1"/>
+  <circle cx="46" cy="315" r="5" fill="#A371F7"/>
+  <text x="64" y="310" class="row-title">Линейная алгебра</text>
+  <text x="64" y="330" class="row-meta">отчетов: 2 · файлов: 29 · коммитов: 21</text>
+  <rect x="400" y="311" width="330" height="8" rx="4" fill="#21262D"/>
+  <rect x="400" y="311" width="330" height="8" rx="4" fill="#A371F7"/>
+  <text x="858" y="312" class="row-number" text-anchor="end">5 583</text>
+  <text x="858" y="330" class="row-unit" text-anchor="end">строк</text>
+  <text x="1080" y="309" class="row-date-label" text-anchor="end">ОБНОВЛЕНО</text>
+  <text x="1080" y="330" class="row-date" text-anchor="end">29.05.2026</text>
+  <line x1="40" y1="344" x2="1080" y2="344" stroke="#21262D" stroke-width="1"/>
+  <circle cx="46" cy="373" r="5" fill="#3FB950"/>
+  <text x="64" y="368" class="row-title">Базы данных</text>
+  <text x="64" y="388" class="row-meta">отчетов: 4 · файлов: 52 · коммитов: 32</text>
+  <rect x="400" y="369" width="330" height="8" rx="4" fill="#21262D"/>
+  <rect x="400" y="369" width="118" height="8" rx="4" fill="#3FB950"/>
+  <text x="858" y="370" class="row-number" text-anchor="end">2 004</text>
+  <text x="858" y="388" class="row-unit" text-anchor="end">строк</text>
+  <text x="1080" y="367" class="row-date-label" text-anchor="end">ОБНОВЛЕНО</text>
+  <text x="1080" y="388" class="row-date" text-anchor="end">11.05.2026</text>
+  <line x1="40" y1="402" x2="1080" y2="402" stroke="#21262D" stroke-width="1"/>
+  <circle cx="46" cy="431" r="5" fill="#4493F8"/>
+  <text x="64" y="426" class="row-title">Информатика</text>
+  <text x="64" y="446" class="row-meta">отчетов: 5 · файлов: 53 · коммитов: 70</text>
+  <rect x="400" y="427" width="330" height="8" rx="4" fill="#21262D"/>
+  <rect x="400" y="427" width="166" height="8" rx="4" fill="#4493F8"/>
+  <text x="858" y="428" class="row-number" text-anchor="end">2 801</text>
+  <text x="858" y="446" class="row-unit" text-anchor="end">строк</text>
+  <text x="1080" y="425" class="row-date-label" text-anchor="end">ОБНОВЛЕНО</text>
+  <text x="1080" y="446" class="row-date" text-anchor="end">29.12.2025</text>
+</svg>
