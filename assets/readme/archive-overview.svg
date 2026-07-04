@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1120" height="486" viewBox="0 0 1120 486" role="img" aria-labelledby="title desc">
   <title id="title">Пульс архива учебных материалов</title>
-  <desc id="desc">Сводка по сабмодулям: предметы, отчеты, коммиты, строки и даты последних обновлений.</desc>
+  <desc id="desc">Сводка по предметам: отчеты, коммиты, строки и даты последних обновлений.</desc>
   <style>
     text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif; }
     .title { font-size: 24px; font-weight: 800; fill: #1F2328; }
@@ -25,7 +25,7 @@
   <rect x="1" y="1" width="1118" height="484" rx="16" fill="#FFFFFF" stroke="#D0D7DE" stroke-width="1.5"/>
   <text x="40" y="40" class="kpi-label">ПРЕДМЕТОВ</text>
   <text x="40" y="78" class="kpi-value">5</text>
-  <text x="40" y="101" class="kpi-note">сабмодули верхнего уровня</text>
+  <text x="40" y="101" class="kpi-note">учебные дисциплины</text>
   <line x1="274" y1="28" x2="274" y2="96" stroke="#E7ECF0" stroke-width="1"/>
   <text x="300" y="40" class="kpi-label">ОТЧЕТОВ</text>
   <text x="300" y="78" class="kpi-value">22</text>

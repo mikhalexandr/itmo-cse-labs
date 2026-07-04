@@ -71,6 +71,7 @@ jobs:
           mkdir -p "organization-profile/${PROFILE_ASSET_DIR}"
           cp assets/readme/archive-overview.svg assets/readme/archive-overview-dark.svg "organization-profile/${PROFILE_ASSET_DIR}/"
           cp assets/readme/archive-activity.svg assets/readme/archive-activity-dark.svg "organization-profile/${PROFILE_ASSET_DIR}/"
+          cp assets/readme/pixel.png "organization-profile/${PROFILE_ASSET_DIR}/"
 
           python3 scripts/update-readme-stats.py \
             --profile-readme organization-profile/profile/README.md \

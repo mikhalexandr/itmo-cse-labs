@@ -1,6 +1,6 @@
 # Архив лабораторных ИТМО CSE
 
-[![Update archive pulse](https://github.com/mikhalexandr/itmo-cse-labs/actions/workflows/update-archive-pulse.yml/badge.svg)](https://github.com/mikhalexandr/itmo-cse-labs/actions/workflows/update-archive-pulse.yml)
+[![Университет ИТМО](https://img.shields.io/badge/Университет_ИТМО-09.03.04_«Программная_инженерия»-blue?style=flat)](https://itmo.ru/)
 [![Last commit](https://img.shields.io/github/last-commit/mikhalexandr/itmo-cse-labs?style=flat)](https://github.com/mikhalexandr/itmo-cse-labs/commits/main)
 [![License: MIT](https://img.shields.io/github/license/mikhalexandr/itmo-cse-labs?style=flat)](LICENSE.md)
 
@@ -22,7 +22,7 @@
 <!-- archive-structure:start -->
 ### 1-й курс
 
-| Семестр | Предмет | Папка | Стек |
+| Семестр<img src="assets/readme/pixel.png" width="100" height="1" alt=""> | Предмет<img src="assets/readme/pixel.png" width="400" height="1" alt=""> | Папка<img src="assets/readme/pixel.png" width="180" height="1" alt=""> | Стек<img src="assets/readme/pixel.png" width="334" height="1" alt=""> |
 | --- | --- | --- | --- |
 | 1 | Информатика | [`informatics/`](1_course/informatics/) | ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white) ![LaTeX](https://img.shields.io/badge/LaTeX-008080?style=flat&logo=latex&logoColor=white) |
 | 1-2 | Линейная алгебра | [`linear-algebra/`](1_course/linear-algebra/) | ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white) ![LaTeX](https://img.shields.io/badge/LaTeX-008080?style=flat&logo=latex&logoColor=white) |

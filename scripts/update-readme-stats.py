@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import base64
 import configparser
 import hashlib
 import math
@@ -90,6 +91,22 @@ OVERVIEW_SVG = "archive-overview.svg"
 OVERVIEW_SVG_DARK = "archive-overview-dark.svg"
 ACTIVITY_SVG = "archive-activity.svg"
 ACTIVITY_SVG_DARK = "archive-activity-dark.svg"
+
+# Прозрачный пиксель-спейсер: GitHub не позволяет задавать ширину таблиц CSS,
+# поэтому колонки растягиваются невидимыми <img width="..."> в шапке таблицы.
+PIXEL_PNG = "pixel.png"
+PIXEL_PNG_BASE64 = (
+    "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAC0lEQVR4nGNgAAIAAAUAAXpeqz8AAAAASUVORK5CYII="
+)
+
+# Ширины колонок таблицы структуры; сумма с внутренними отступами ячеек
+# (26px на колонку) подогнана под натуральную ширину SVG-схем (1120px).
+STRUCTURE_COLUMNS = (
+    ("Семестр", 100),
+    ("Предмет", 400),
+    ("Папка", 180),
+    ("Стек", 334),
+)
 DEFAULT_PROFILE_ASSET_PREFIX = "assets/itmo-cse-labs"
 DEFAULT_REPOSITORY_URL = "https://github.com/mikhalexandr/itmo-cse-labs"
 
@@ -729,7 +746,7 @@ def render_overview_svg(stats: list[SubmoduleStats], totals: Totals, theme: Them
 
     # KPI-колонки, разделенные вертикальными линиями.
     kpis = [
-        ("ПРЕДМЕТОВ", format_int(totals.submodules), "сабмодули верхнего уровня"),
+        ("ПРЕДМЕТОВ", format_int(totals.submodules), "учебные дисциплины"),
         ("ОТЧЕТОВ", format_int(totals.reports), "PDF-документы в архиве"),
         ("КОММИТОВ", format_int(totals.commits), "суммарная git-история"),
         ("СТРОК ТЕКСТА", format_int(totals.lines), "в текстовых файлах"),
@@ -779,7 +796,7 @@ def render_overview_svg(stats: list[SubmoduleStats], totals: Totals, theme: Them
 
         if not item.initialized:
             parts.append(
-                f'  <text x="64" y="{row_y + 44}" class="row-meta">сабмодуль не инициализирован</text>'
+                f'  <text x="64" y="{row_y + 44}" class="row-meta">материалы еще не подключены</text>'
             )
             continue
 
@@ -821,7 +838,7 @@ def render_overview_svg(stats: list[SubmoduleStats], totals: Totals, theme: Them
     return svg_document(
         height,
         "Пульс архива учебных материалов",
-        "Сводка по сабмодулям: предметы, отчеты, коммиты, строки и даты последних обновлений.",
+        "Сводка по предметам: отчеты, коммиты, строки и даты последних обновлений.",
         theme,
         "\n".join(parts),
     )
@@ -865,7 +882,7 @@ def render_activity_svg(stats: list[SubmoduleStats], totals: Totals, theme: Them
         svg_header(
             theme,
             "Активность коммитов",
-            "Последние 12 месяцев · git-история всех сабмодулей",
+            "Последние 12 месяцев · git-история всех предметов",
             badge,
         )
     )
@@ -966,7 +983,7 @@ def render_activity_svg(stats: list[SubmoduleStats], totals: Totals, theme: Them
     return svg_document(
         height,
         "Активность коммитов по месяцам",
-        "Количество коммитов во всех сабмодулях за последние двенадцать месяцев относительно последнего обновления архива.",
+        "Количество коммитов по всем предметам за последние двенадцать месяцев относительно последнего обновления архива.",
         theme,
         defs_block + "\n".join(parts),
     )
@@ -990,6 +1007,19 @@ def write_file(path: Path, content: str, check: bool) -> bool:
     return True
 
 
+def write_binary_file(path: Path, content: bytes, check: bool) -> bool:
+    old = path.read_bytes() if path.exists() else None
+    if old == content:
+        return False
+
+    if check:
+        return True
+
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_bytes(content)
+    return True
+
+
 def update_assets(root: Path, stats: list[SubmoduleStats], totals: Totals, check: bool) -> bool:
     asset_dir = root / README_ASSET_DIR
     assets = {
@@ -1002,6 +1032,12 @@ def update_assets(root: Path, stats: list[SubmoduleStats], totals: Totals, check
     changed = False
     for filename, content in assets.items():
         changed |= write_file(asset_dir / filename, content, check=check)
+
+    changed |= write_binary_file(
+        asset_dir / PIXEL_PNG,
+        base64.b64decode(PIXEL_PNG_BASE64),
+        check=check,
+    )
     return changed
 
 
@@ -1051,6 +1087,12 @@ def generate_structure_block(stats: list[SubmoduleStats]) -> str:
         match = re.match(r"^(\d+)", course)
         return (0, int(match.group(1)), course) if match else (1, 0, course)
 
+    pixel_src = f"{README_ASSET_DIR.as_posix()}/{PIXEL_PNG}"
+    header_cells = " | ".join(
+        f'{title}<img src="{pixel_src}" width="{width}" height="1" alt="">'
+        for title, width in STRUCTURE_COLUMNS
+    )
+
     blocks: list[str] = []
     for course in sorted(courses, key=course_order):
         rows = sorted(
@@ -1060,7 +1102,7 @@ def generate_structure_block(stats: list[SubmoduleStats]) -> str:
         lines = [
             f"### {course_title(course)}",
             "",
-            "| Семестр | Предмет | Папка | Стек |",
+            f"| {header_cells} |",
             "| --- | --- | --- | --- |",
         ]
         for item in rows:
